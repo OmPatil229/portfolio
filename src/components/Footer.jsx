@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaGithub, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   const socials = [
     { name: "LinkedIn", url: "https://www.linkedin.com/in/om-patil-bb7a97246", icon: FaLinkedin },
     { name: "X", url: "https://x.com/OmPatil229", icon: FaTwitter },
     { name: "Instagram", url: "https://www.instagram.com/ompatil.229/", icon: FaInstagram },
+    { name: "WhatsApp", url: "https://wa.me/919313796383?text=Hi%20OM,%20I'm%20reaching%20out%20via%20your%20portfolio.", icon: FaWhatsapp },
     { name: "Facebook", url: "https://www.facebook.com/profile.php?id=61554830761613", icon: FaFacebook },
     { name: "GitHub", url: "https://github.com/OmPatil229", icon: FaGithub },
   ];

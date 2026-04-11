@@ -73,7 +73,12 @@ const Hero = () => {
             <span className="relative z-10">View My Work</span>
             <div className="absolute inset-0 bg-brand-dark translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </a>
-          <a href="#contact" className="group border-2 border-brand-blue text-brand-blue px-10 py-4 rounded-full font-medium hover:bg-brand-blue hover:text-white transition-all">
+          <a 
+            href="https://wa.me/919313796383?text=Hi%20OM,%20I'm%20interested%20in%20a%20project%20inquiry%20regarding%20MERN%20Stack%20development." 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group border-2 border-brand-blue text-brand-blue px-10 py-4 rounded-full font-medium hover:bg-brand-blue hover:text-white transition-all text-center"
+          >
             Let's Talk
           </a>
         </motion.div>
