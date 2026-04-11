@@ -24,9 +24,10 @@ const About = () => {
         >
           <p>
             The best technology is invisible. When I build a product, my goal isn't to show off complex code. 
-            It's to make the complex feel incredibly simple. As a MERN stack expert, I engineer fast, reliable architectures 
-            that handle whatever scale you throw at them, while delivering a fluid, brand-aligned user interface.
+            It's to make the complex feel incredibly simple. As a MERN stack expert based in <span className="text-brand-accent font-semibold">Surat, India</span>, I engineer fast, reliable architectures 
+            that handle whatever scale you throw at them, while delivering a fluid, brand-aligned user interface for businesses across the country.
           </p>
+
           <p>
             From MongoDB to React, every line of code is written with purpose. 
             Because great software shouldn't just run—it should feel like it's anticipating your next move.
