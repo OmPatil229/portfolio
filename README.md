@@ -1,16 +1,67 @@
-# React + Vite
+# OM's Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, high-performance personal portfolio built with React, Vite, and Tailwind CSS. This project showcases my work as a MERN Stack Master and includes peer-reviewed research in health technology.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend**: React.js with Vite
+- **Styling**: Tailwind CSS (v4 pattern)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Architecture**: Component-based, responsive design
 
-## React Compiler
+## 📂 Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+├── src/
+│   ├── components/       # Reusable UI components (Hero, About, Research, etc.)
+│   ├── assets/           # Static assets (images, SVGs)
+│   ├── App.jsx           # Main application entry point
+│   ├── index.css         # Global styles and design tokens
+│   └── main.jsx          # React DOM mounting
+├── public/               # Public assets
+├── tailwind.config.js    # Tailwind configuration
+└── vite.config.js        # Vite configuration
+```
 
-## Expanding the ESLint configuration
+## 🛠️ Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/OmPatil229/portfolio.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server:
+```bash
+npm run dev
+```
+
+### Build
+
+Build the production bundle:
+```bash
+npm run build
+```
+
+## 📄 Research & Publications
+
+This portfolio features research engineering work focused on health technology:
+- *Comprehensive Review on BMI, TDEE, BMR and Calories for Weight Management*
+- *A Comprehensive Framework for Weight Management Integrating Macro, Micronutrient, and Behavioral Insights*
+
+## 📜 License
+
+This project is licensed under the MIT License.
