@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cpu, Globe, Sparkles, Zap } from 'lucide-react';
+import heroImg from '../assets/hero.png';
 
 const Hero = () => {
   const containerVariants = {
@@ -105,18 +106,17 @@ const Hero = () => {
           <div className="absolute -inset-10 border border-brand-blue/10 rounded-[4rem] -z-10 animate-[spin_30s_linear_infinite_reverse]" />
 
           {/* Image Container */}
-          <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-brand-dark/5 shadow-2xl relative">
+          <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-brand-cream border border-brand-blue/5 shadow-2xl relative">
             <img 
-              src="/hero.png" 
-              alt="Portrait" 
-              className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-1000 hover:scale-105"
+              src={heroImg} 
+              alt="Portrait of OM" 
+              className="w-full h-full object-cover object-top transition-all duration-1000 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           </div>
 
           {/* Playful Blob */}
           <motion.div 
-            autoFocus
             className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent rounded-full -z-10 blur-2xl opacity-30"
             animate={{ 
               scale: [1, 1.2, 1],
@@ -131,4 +131,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
