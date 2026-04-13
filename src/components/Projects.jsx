@@ -6,8 +6,6 @@ import crmImg from '../assets/projects/crm-llm.png';
 import gpsImg from '../assets/projects/gps-employee.png';
 
 const ProjectCard = ({ project, index }) => {
-  const isEven = index % 2 === 0;
-
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
@@ -25,7 +23,6 @@ const ProjectCard = ({ project, index }) => {
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center bg-brand-blue/5 p-8 text-center relative overflow-hidden">
-             {/* Simple generative pattern for Life OS */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full transform scale-150 rotate-45 flex flex-wrap gap-4">
                 {[...Array(60)].map((_, i) => (
@@ -51,7 +48,7 @@ const ProjectCard = ({ project, index }) => {
 
       <div className="flex flex-col gap-4 px-2">
         <div className="flex items-center gap-3">
-          <div className={`p-2 rounded-lg ${project.color} bg-opacity-10 text-brand-accent`}>
+          <div className={`p-2 rounded-lg bg-brand-accent/10 text-brand-accent`}>
             {project.icon}
           </div>
           <span className="text-brand-accent text-xs font-bold tracking-[0.2em] uppercase">
@@ -63,24 +60,40 @@ const ProjectCard = ({ project, index }) => {
           {project.title}
         </h3>
         
-        <p className="text-brand-blue/80 leading-relaxed font-normal text-base md:text-lg mb-4 line-clamp-3">
-          {project.description}
-        </p>
+        <div className="space-y-6">
+          <p className="text-brand-blue/80 leading-relaxed font-normal text-base md:text-lg">
+            {project.description}
+          </p>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+          <div className="p-6 rounded-2xl bg-brand-blue/[0.03] border border-brand-blue/5 space-y-4">
+            <div>
+              <p className="text-[10px] font-black text-brand-accent uppercase tracking-[0.2em] mb-2">The Challenge</p>
+              <p className="text-sm text-brand-blue/70 italic leading-relaxed">
+                "{project.problem}"
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-brand-blue/40 uppercase tracking-[0.2em] mb-2">Engineering Solution</p>
+              <p className="text-sm text-brand-blue/80 font-medium leading-relaxed">
+                {project.solution}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
           {project.tags.map((tag, i) => (
-            <span key={i} className="text-[10px] px-3 py-1.5 rounded-full border border-brand-blue/10 bg-white text-brand-blue/60 font-bold uppercase tracking-widest shadow-sm">
+            <span key={i} className="text-[9px] px-3 py-1.5 rounded-full border border-brand-blue/10 bg-white text-brand-blue/60 font-bold uppercase tracking-widest shadow-sm">
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="space-y-4 pt-6 border-t border-brand-blue/5">
-          <p className="text-[10px] font-black text-brand-blue/40 uppercase tracking-[0.3em]">Core Architecture</p>
-          <ul className="grid grid-cols-1 gap-2">
+        <div className="space-y-4 pt-6 mt-4 border-t border-brand-blue/5">
+          <p className="text-[10px] font-black text-brand-blue/40 uppercase tracking-[0.3em]">Key Innovations</p>
+          <ul className="grid grid-cols-1 gap-3">
             {project.features.map((feature, i) => (
-              <li key={i} className="text-sm text-brand-blue/70 flex items-center gap-3 font-medium">
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-accent/50" />
+              <li key={i} className="text-sm text-brand-blue/70 flex items-start gap-3 font-medium border-l-2 border-brand-accent/20 pl-4 py-1">
                 {feature}
               </li>
             ))}
@@ -97,61 +110,64 @@ const Projects = () => {
       title: "AI Calorie Insight",
       category: "Health Engineering",
       icon: <Activity size={18} />,
-      description: "An intelligent nutrition management platform designed to help users manage their nutrition and achieve specific health goals through intelligent tracking and personalized recommendations. It adapts based on user-specific parameters like age, gender, weight, and target goals.",
+      description: "A precision nutrition platform that moves beyond simple tracking into diagnostic-style health architecture.",
+      problem: "Traditional apps offer generic advice, failing to account for metabolic variations and dynamic physiological changes.",
+      solution: "Engineered a recursive heuristic engine that adjusts macro targets daily based on biometric fluctuations and activity intensity.",
       image: calorieImg,
       tags: ["AI Adapters", "Health-Tech", "MERN", "Nutrition Science"],
       features: [
-        "Personalized calorie tracking system",
-        "Health recommendations based on user profile (age, gender, weight)",
-        "Goal-based planning (weight loss, maintenance, muscle gain)",
-        "Daily intake monitoring and feedback",
-        "Scalable for AI-driven health insights"
+        "Dynamic macro-adjustment algorithm based on daily weight drift",
+        "Personalized micronutrient optimization engine",
+        "Predictive goal estimation using historical adherence data",
+        "Automated meal-profile analysis for nutritional density"
       ]
     },
     {
       title: "Private CRM LLM",
       category: "Ai & Data Integrity",
       icon: <MessageSquare size={18} />,
-      description: "A customer relationship management (CRM) system enhanced with a locally deployed Large Language Model (LLM), enabling intelligent data interaction without external APIs. Ensures data privacy and control by processing everything locally.",
+      description: "An enterprise-grade CRM that leverages the power of Local LLMs to turn unstructured customer data into actionable intelligence.",
+      problem: "Cloud-based AI models pose high data-leakage risks for sensitive customer logs and proprietary business logic.",
+      solution: "Containerized a Llama 3 instance within an isolated VPC, allowing natural language queries over encrypted databases.",
       image: crmImg,
       tags: ["Local Inference", "Llama 3", "Data Privacy", "Enterprise"],
       features: [
-        "CRM system for managing customer and business data",
-        "Integration with locally hosted LLM for intelligent querying",
-        "Context-aware responses based on internal data",
-        "No external API dependency (privacy-focused architecture)",
-        "Fast and secure data processing"
+        "In-situ inference engine eliminates external API latency and cost",
+        "RAG (Retrieval-Augmented Generation) for accurate context extraction",
+        "Automated sentiment analysis and lead prioritization",
+        "Privacy-first architecture with end-to-end data localization"
       ]
     },
     {
       title: "GPS Operations Hub",
       category: "Enterprise Mobility",
       icon: <MapPin size={18} />,
-      description: "A system built to manage employee operations including attendance, salary, and payout scheduling with live GPS coordination for verified check-ins and fraud prevention.",
+      description: "A mission-critical management system for decentralized workforces, focused on operational integrity and real-time coordination.",
+      problem: "Manual attendance systems and simple GPS logs are prone to 'location spoofing' and clock-in fraud in field operations.",
+      solution: "Implemented multi-layered geo-fencing with device-integrity checks and cryptographic proof-of-work for each check-in event.",
       image: gpsImg,
       tags: ["Geo-fencing", "IoT", "Real-time Ops", "Logistics"],
       features: [
-        "Employee attendance tracking system",
-        "GPS-based location verification for check-in",
-        "Admin-controlled office location setup",
-        "Salary and payout management",
-        "Real-time monitoring and fraud prevention"
+        "Anti-spoofing logic verifying hardware GPS vs network triangulation",
+        "Automated payout calculations tied to verified operational milestones",
+        "Real-time administrative dashboard with geo-spatial visualizations",
+        "Fractional-latency updates using WebSocket protocols for live tracking"
       ]
     },
     {
       title: "Life OS Systems",
       category: "Behavioral Design",
       icon: <Brain size={18} />,
-      description: "A comprehensive personal productivity system functioning as a 'second brain' for managing tasks, habits, and long-term goals. It structured workflows into clear, actionable systems to improve execution.",
+      description: "An advanced productivity framework built to bridge the gap between abstract long-term goals and daily execution integrity.",
+      problem: "Planning often collapses due to 'reactive work'—tasks that appear during the day and derail prepared schedules.",
+      solution: "Developed an 'Execution Integrity' metric that locks daily intents into an immutable snapshot to track planning accuracy.",
       image: null,
       tags: ["Productivity", "Goal Hierarchies", "Atomic Design"],
       features: [
-        "Centralized management of tasks, goals, habits, and routines",
-        "Multi-level goal tracking (yearly → monthly → weekly → daily)",
-        "Automatic breakdown of long-term goals into actionable steps",
-        "Progress tracking and completion analytics",
-        "Habit consistency monitoring and performance insights",
-        "Scalable for AI-based productivity and behavioral recommendations"
+        "Immutable 'Daily Intent' snapshots for honest performance audits",
+        "Recursive goal breakdown from yearly vision to daily micro-actions",
+        "Advanced carry-forward logic that preserves task context and history",
+        "Consistency heatmaps for identifying behavioral bottlenecks"
       ]
     }
   ];
