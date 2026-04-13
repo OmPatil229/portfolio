@@ -17,12 +17,12 @@ const Navbar = () => {
         <a href="#projects" className="hover:text-brand-accent transition-colors">Projects</a>
       </div>
       <a 
-        href="https://wa.me/919313796383?text=Hi%20OM,%20I'd%20like%20to%20hire%20you%20for%20a%20project." 
+        href="https://wa.me/919313796383?text=Hi%20OM,%20I'd%20like%20to%20send%20you%20my%20project%20requirements." 
         target="_blank"
         rel="noopener noreferrer"
         className="bg-brand-accent text-white px-6 py-2.5 rounded-full text-sm font-medium hover:shadow-magnetic transition-all hover:-translate-y-0.5 active:scale-95"
       >
-        Hire Me
+        Sent your project requirement
       </a>
     </motion.nav>
   );
