@@ -91,7 +91,21 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="relative w-full max-w-[500px] aspect-[4/5]">
+        <div className="relative w-full max-w-[500px] aspect-square">
+          {/* Live Gradient Background */}
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-tr from-brand-accent/30 via-brand-blue/20 to-brand-accent/30 rounded-full blur-3xl -z-10"
+            animate={{ 
+              scale: [1, 1.1, 1],
+              rotate: [0, 90, 180, 270, 360],
+            }}
+            transition={{ 
+              duration: 15, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          />
+
           {/* Floating Icons */}
           {elements.map((el, i) => (
             <motion.div
@@ -107,11 +121,11 @@ const Hero = () => {
           ))}
 
           {/* Decorative Rings */}
-          <div className="absolute -inset-4 border border-brand-accent/20 rounded-[3rem] -z-10 animate-[spin_20s_linear_infinite]" />
-          <div className="absolute -inset-10 border border-brand-blue/10 rounded-[4rem] -z-10 animate-[spin_30s_linear_infinite_reverse]" />
+          <div className="absolute -inset-4 border border-brand-accent/20 rounded-full -z-10 animate-[spin_20s_linear_infinite]" />
+          <div className="absolute -inset-10 border border-brand-blue/10 rounded-full -z-10 animate-[spin_30s_linear_infinite_reverse]" />
 
           {/* Image Container */}
-          <div className="w-full h-full rounded-[2.5rem] overflow-hidden bg-brand-cream border border-brand-blue/5 shadow-2xl relative">
+          <div className="w-full h-full rounded-full overflow-hidden bg-brand-cream border-4 border-white shadow-2xl relative z-10">
             <img 
               src={heroImg} 
               alt="Portrait of OM" 
@@ -122,7 +136,7 @@ const Hero = () => {
 
           {/* Playful Blob */}
           <motion.div 
-            className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent rounded-full -z-10 blur-2xl opacity-30"
+            className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-accent rounded-full z-0 blur-2xl opacity-30"
             animate={{ 
               scale: [1, 1.2, 1],
               opacity: [0.3, 0.5, 0.3]
