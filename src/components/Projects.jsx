@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index }) => {
         <div className="space-y-4 pt-6 border-t border-brand-blue/5">
           <p className="text-[10px] font-black text-brand-blue/40 uppercase tracking-[0.3em]">Core Architecture</p>
           <ul className="grid grid-cols-1 gap-2">
-            {project.features.slice(0, 3).map((feature, i) => (
+            {project.features.map((feature, i) => (
               <li key={i} className="text-sm text-brand-blue/70 flex items-center gap-3 font-medium">
                 <div className="w-1.5 h-1.5 rounded-full bg-brand-accent/50" />
                 {feature}
@@ -97,56 +97,61 @@ const Projects = () => {
       title: "AI Calorie Insight",
       category: "Health Engineering",
       icon: <Activity size={18} />,
-      description: "Beyond basic tracking—an adaptive health ecosystem that evolves with your biology. Designed for precision nutrition and behavioral transformation.",
+      description: "An intelligent nutrition management platform designed to help users manage their nutrition and achieve specific health goals through intelligent tracking and personalized recommendations. It adapts based on user-specific parameters like age, gender, weight, and target goals.",
       image: calorieImg,
       tags: ["AI Adapters", "Health-Tech", "MERN", "Nutrition Science"],
       features: [
-        "Bio-parameter adaptive recommendations",
-        "Multi-goal nutrition planning engine",
-        "Intelligent daily intake feedback loop",
-        "Full-scale health-tech architecture"
+        "Personalized calorie tracking system",
+        "Health recommendations based on user profile (age, gender, weight)",
+        "Goal-based planning (weight loss, maintenance, muscle gain)",
+        "Daily intake monitoring and feedback",
+        "Scalable for AI-driven health insights"
       ]
     },
     {
       title: "Private CRM LLM",
       category: "Ai & Data Integrity",
       icon: <MessageSquare size={18} />,
-      description: "A secure, air-gapped CRM solution powered by local LLMs. Conversational intelligence that stays within your business walls.",
+      description: "A customer relationship management (CRM) system enhanced with a locally deployed Large Language Model (LLM), enabling intelligent data interaction without external APIs. Ensures data privacy and control by processing everything locally.",
       image: crmImg,
       tags: ["Local Inference", "Llama 3", "Data Privacy", "Enterprise"],
       features: [
-        "Offline-first conversational AI",
-        "Context-aware internal data querying",
-        "Privacy-focused business intelligence",
-        "Secure local model architecture"
+        "CRM system for managing customer and business data",
+        "Integration with locally hosted LLM for intelligent querying",
+        "Context-aware responses based on internal data",
+        "No external API dependency (privacy-focused architecture)",
+        "Fast and secure data processing"
       ]
     },
     {
       title: "GPS Operations Hub",
       category: "Enterprise Mobility",
       icon: <MapPin size={18} />,
-      description: "Real-time workforce orchestration system. Ensuring accountability through precision GPS verification and automated operations.",
+      description: "A system built to manage employee operations including attendance, salary, and payout scheduling with live GPS coordination for verified check-ins and fraud prevention.",
       image: gpsImg,
       tags: ["Geo-fencing", "IoT", "Real-time Ops", "Logistics"],
       features: [
-        "Live GPS check-in verification",
-        "Admin-controlled office boundaries",
-        "Automated salary & payout ledger",
-        "Fraud-proof attendance logic"
+        "Employee attendance tracking system",
+        "GPS-based location verification for check-in",
+        "Admin-controlled office location setup",
+        "Salary and payout management",
+        "Real-time monitoring and fraud prevention"
       ]
     },
     {
       title: "Life OS Systems",
       category: "Behavioral Design",
       icon: <Brain size={18} />,
-      description: "The ultimate second brain. A multi-level productivity architecture that bridges the gap between long-term vision and daily execution.",
+      description: "A comprehensive personal productivity system functioning as a 'second brain' for managing tasks, habits, and long-term goals. It structured workflows into clear, actionable systems to improve execution.",
       image: null,
       tags: ["Productivity", "Goal Hierarchies", "Atomic Design"],
       features: [
-        "Multi-level systemic goal tracking",
-        "Actionable vision-to-task cascades",
-        "Deep habit behavioral analytics",
-        "Comprehensive task architecture"
+        "Centralized management of tasks, goals, habits, and routines",
+        "Multi-level goal tracking (yearly → monthly → weekly → daily)",
+        "Automatic breakdown of long-term goals into actionable steps",
+        "Progress tracking and completion analytics",
+        "Habit consistency monitoring and performance insights",
+        "Scalable for AI-based productivity and behavioral recommendations"
       ]
     }
   ];
